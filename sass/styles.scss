@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.header {
+    padding: 2rem 1.25rem;
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .container-mobile-nav {
+            .btn-menu {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+
+            .header-mobile-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
+}
