@@ -1,9 +1,13 @@
+@import "./variables.scss";
+
 body {
     margin: 0;
+    font-family: $font;
+    font-size: 18px;
 }
 
 .header {
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.75rem;
 
     .header-container {
         display: flex;
@@ -18,13 +22,260 @@ body {
                 cursor: pointer;
             }
 
-            .header-mobile-nav {
+            .mobile-nav-fixed {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .18s ease-in-out;
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 100%;
+                width: 100vw;
                 height: 100vh;
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: rgba($color: $veryDarkBlue, $alpha: .9);
+                padding: 2rem 1.5rem;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                &.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+
+                .mobile-nav-container {
+                    .header-mobile-nav {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1rem 0;
+    
+                        .close-mobile-nav {
+                            & i {
+                                vertical-align: middle;
+                            }
+                            & i img {
+                                width: 24px;
+                                height: 22.5px;
+                            }
+                        }
+                    }
+                    .mobile-nav {
+                        .mobile-nav-list {
+                            padding-left: 0;
+    
+                            .mobile-nav-item {
+                                list-style: none;
+                                text-align: center;
+                                border-top: 1px solid #eeeeee4d;
+                                &:last-child {
+                                    border-bottom: 1px solid #eeeeee4d;
+                                }
+                                
+                                & a {
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    padding: 1.75rem 0;
+                                    color: #fff;
+                                    font-size: 1.5rem;
+                                    font-weight: 400;
+                                    letter-spacing: 2px;
+                                    text-transform: uppercase;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    & .mobile-login .btn-mobile-login {
+                        letter-spacing: 2px;
+                        padding: 1rem 1.5rem;
+                        font-size: 1.75rem;
+                        background-color: transparent;
+                        color: #fff;
+                        border: 2px solid #fff;
+                        border-radius: 4px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                    }
+                }
+                .mobile-nav-social-media {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0 3rem;
+                    padding-bottom: 1.5rem;
+
+                    .header-facebook-link {
+                        & img {
+                            aspect-ratio: 1/1;
+                            width: 36px;
+                        }
+                    }
+                    .header-twitter-link {
+                        & img {
+                            width: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    .hero-image {
+        & img {
+            width: 100vw;
+        }
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 1.75rem;
+
+        .hero-description {
+            & h1 {
+                font-size: 2rem;
+                color: $veryDarkBlue;
+                text-transform: capitalize;
+                letter-spacing: 2px;
+            }
+
+            & p {
+                color: $grayish;
+            }
+        }
+        
+        .hero-action {
+            display: flex;
+            justify-content: center;
+            gap: 0 2rem;
+
+            .hero-action-chrome, .hero-action-firefox {
+                padding: 1rem;
+                border: none;
+                font-size: 1rem;
+                transition: transform .15s ease-in;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+
+            .hero-action-chrome:hover, .hero-action-firefox:hover {
+                transform: scale(.8);
+            }
+
+            .hero-action-chrome {
+                background-color: $softBlue;
+                color: #fff;
+            }
+            
+            .hero-action-firefox {
+                background-color: #f7f7f7;
+                color: $veryDarkBlue;
+                box-shadow: 0px 4px 14px 2px rgb(0 0 0 / 13%);
+            }
+        }
+    }
+}
+
+.features {
+    padding: 1.75rem;
+    text-align: center;
+
+    .features-intro {
+        & h2 {
+            font-size: 2rem;
+            color: $veryDarkBlue;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+        }
+        & p {
+            color: $grayish;
+        }
+
+    }
+    .features-nav-container {
+        .features-nav {
+            .features-nav-list {
+                padding-left: 0;
+
+                .features-nav-list-item {
+                    cursor: pointer;
+                    padding: 2rem;
+                    list-style: none;
+                    border-top: 2px solid #eee;
+                    color: $grayish;
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    
+                    &.active {
+                        color: $veryDarkBlue;
+                    }
+
+                    .features-item-title {
+                        position: relative;
+                    }
+
+                    .features-item-title::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -32px;
+                        left: 5%;
+                        right: 5%;
+                        width: 90%;
+                        max-height: 5px;
+                        background-color: $softRed;
+                        transition: padding .15s ease-in;
+                        padding: 0;
+                    }
+                    
+                    &.active .features-item-title::before {
+                        padding: 2px 0;
+                        max-height: 5px;
+                    }
+                    &:last-child {
+                        border-bottom: 2px solid #eee;
+                    }
+                }
+            }
+        }
+
+        .tabs {
+            display: flex;
+            overflow-x: hidden;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            // scroll mandatory
+            scroll-snap-type: x mandatory;
+            .tab {
+                flex-shrink: 0;
+                flex-grow: 0;
+                width: calc(100vw - (1.75rem + 1.75rem));
+                box-sizing: border-box;
+                scroll-snap-align: center;
+                .tab-image {
+                    & img {
+                        width: 100%;
+                    }
+                }
+
+                .tab-content {
+                    & h3 {
+                        font-size: 1.75rem;
+                        color: $veryDarkBlue;
+                        text-transform: capitalize;
+                        letter-spacing: 2px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    & p {
+                        color: $grayish;
+                        white-space: normal;
+                    }
+                }
             }
         }
     }
