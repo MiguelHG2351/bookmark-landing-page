@@ -1,5 +1,7 @@
 # Frontend Mentor - Bookmark landing page
 
+preview: [Preview](https://miguelhg2351.github.io/bookmark-landing-page/)
+
 ![Design preview for the Bookmark landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
