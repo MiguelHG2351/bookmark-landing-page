@@ -1,0 +1,153 @@
+.features {
+    padding: 1.75rem;
+    text-align: center;
+
+    .features-intro {
+        & h2 {
+            font-size: 2rem;
+            color: $veryDarkBlue;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+        }
+        & p {
+            color: $grayish;
+        }
+
+    }
+    .features-nav-container {
+        .features-nav {
+            .features-nav-list {
+                padding-left: 0;
+
+                .features-nav-list-item {
+                    cursor: pointer;
+                    padding: 2rem;
+                    list-style: none;
+                    border-top: 2px solid #eee;
+                    color: $grayish;
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    
+                    &.active {
+                        color: $veryDarkBlue;
+                    }
+
+                    .features-item-title {
+                        position: relative;
+                    }
+
+                    .features-item-title::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -32px;
+                        left: 5%;
+                        right: 5%;
+                        width: 90%;
+                        max-height: 5px;
+                        background-color: $softRed;
+                        transition: padding .15s ease-in;
+                        padding: 0;
+                    }
+                    
+                    &.active .features-item-title::before {
+                        padding: 2px 0;
+                        max-height: 5px;
+                    }
+                    &:last-child {
+                        border-bottom: 2px solid #eee;
+                    }
+                }
+            }
+        }
+
+        .tabs {
+            display: flex;
+            overflow-x: hidden;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            // scroll mandatory
+            scroll-snap-type: x mandatory;
+            .tab {
+                flex-shrink: 0;
+                flex-grow: 0;
+                width: calc(100vw - (1.75rem + 1.75rem));
+                box-sizing: border-box;
+                scroll-snap-align: center;
+                .tab-image {
+                    & img {
+                        width: 100%;
+                    }
+                }
+
+                .tab-content {
+                    & h3 {
+                        font-size: 1.75rem;
+                        color: $veryDarkBlue;
+                        text-transform: capitalize;
+                        letter-spacing: 2px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    & p {
+                        color: $grayish;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .features {
+        padding: 8rem;
+
+        .features-intro {
+            p {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        .features-nav {
+            .features-nav-list {
+                display: flex;
+                justify-content: center;
+
+                .features-nav-list-item {
+                    border: none;
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
+                    .features-item-title {
+                        font-size: 1rem;
+                    }
+                    &.active .features-item-title::before {
+                        width: 120%;
+                        left: -10%;
+                        right: unset;
+                    }
+                }
+            }
+        }
+
+        .features-nav-container {
+            .tabs {
+                .tab {
+                    display: flex;
+                    width: calc(100vw - (8rem + 8rem));
+                    align-items: center;
+
+                    .tab-image {
+                        flex: .5;
+                        
+                    }
+                    .tab-content {
+                        flex: .5;
+                    }
+                }
+            }
+        }
+    }
+}

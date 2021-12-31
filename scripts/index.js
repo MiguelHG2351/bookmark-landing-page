@@ -4,6 +4,8 @@ const $mobileNav = document.querySelector('#mobile-nav-fixed')
 const $featuresNavItems = document.querySelectorAll('.features-nav-list-item')
 const $tabsScroll = document.querySelector('#tabs-scroll')
 
+const $form = document.querySelector('#form')
+
 $btnMenu.addEventListener('click', () => {
     $mobileNav.classList.add('active')
 })
@@ -33,4 +35,8 @@ $featuresNavItems.forEach(($featuresNavItem) => {
             }
         })
     })
+})
+
+$form.addEventListener('submit', (e) => {
+    e.preventDefault()
 })

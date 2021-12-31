@@ -12,10 +12,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
+  <header class="header with-padding">
     <div class="header-container">
       <div class="header-logo">
         <img src="images/logo-bookmark.svg" alt="Logo de Bookmark">
+      </div>
+      <div class="desktop-nav-container">
+        <nav class="desktop-nav">
+          <ul class="desktop-nav-list">
+            <li class="desktop-nav-item"><a href="#">Features</a></li>
+            <li class="desktop-nav-item"><a href="#">Pricing</a></li>
+            <li class="desktop-nav-item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <button>Login</button>
       </div>
       <div class="container-mobile-nav" role="menu">
         <button class="btn-menu" id="btn-menu">
@@ -68,7 +78,7 @@
     <div class="hero-image">
       <img src="images/illustration-hero.svg" alt="">
     </div>
-    <div class="hero-content">
+    <div class="hero-content with-padding">
       <div class="hero-description">
         <h1>A simple bookmark manager</h1>
         <p>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
@@ -135,11 +145,104 @@
         </section>
     </section>
   </section>
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Miguel Hernández</a>.
-    </p>
+  <section class="browsers-available with-padding">
+    <h2>Download Extension</h2>
+    <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
+    <section class="card-browsers">
+      <article class="card-browser">
+        <div class="card-browser-header">
+          <img src="images/logo-chrome.svg" alt="google chrome">
+          <h3>Add to Chrome</h3>
+          <p>Minumun version 62</p>
+        </div>
+        <div class="card-browser-button">
+          <button>Add & install extension</button>
+        </div>
+      </article>
+      <article class="card-browser">
+        <div class="card-browser-header">
+          <img src="images/logo-firefox.svg" alt="google chrome">
+          <h3>Add to Chrome</h3>
+          <p>Minumun version 62</p>
+        </div>
+        <div class="card-browser-button">
+          <button>Add & install extension</button>
+        </div>
+      </article>
+      <article class="card-browser">
+        <div class="card-browser-header">
+          <img src="images/logo-opera.svg" alt="google chrome">
+          <h3>Add to Chrome</h3>
+          <p>Minumun version 62</p>
+        </div>
+        <div class="card-browser-button">
+          <button>Add & install extension</button>
+        </div>
+      </article>
+    </section>
+  </section>
+  <section class="faq with-padding">
+    <h2>Frequently asked questions</h2>
+    <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+    <div class="dropdowns">
+      <details class="dropdown">
+        <summary class="dropdown-title">What is Bookmark?</summary>
+        <div class="dropdown-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+            justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</p>
+        </div>
+      </details>
+      <details class="dropdown">
+        <summary class="dropdown-title">How can I request a new browser?</summary>
+        <div class="dropdown-content">
+          <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+            Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+            ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+            Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+        </div>
+      </details>
+      <details class="dropdown">
+        <summary class="dropdown-title">Is there a mobile app?</summary>
+        <div class="dropdown-content">
+          <p>Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+            urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+            sollicitudin ex et ultricies bibendum.</p>
+        </div>
+      </details>
+      <details class="dropdown">
+        <summary class="dropdown-title">What about other Chromium browsers?</summary>
+        <div class="dropdown-content">
+          <p>Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+            vitae neque eget nisl gravida pellentesque non ut velit.</p>
+        </div>
+      </details>
+    </div>
+    <button class="btn-dropdown">More info</button>
+  </section>
+  <section class="up-to-date">
+    <div class="up-to-date-title">
+      <p>35.000+ already joined</p>
+      <h2>Stay up-to-date with what we're doing</h2>
+    </div>
+
+    <form class="form" id="form">
+      <input class="input-email" type="email" placeholder="Enter your email address">
+      <button class="btn-form">Contact us</button>
+    </form>
+  </section>
+  <footer class="footer">
+    <div class="nav-and-logo">
+      <img src="images/logo-footer-bookmark.svg" alt="Logo de bookmark">
+      <ul class="list-nav-footer">
+        <li class="list-item"><a href="#">Features</a></li>
+        <li class="list-item"><a href="#">Pricing</a></li>
+        <li class="list-item"><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-social-media">
+      <img src="images/icon-twitter.svg" alt="Siguenos en twitter">
+      <img src="images/icon-facebook.svg" alt="Siguenos en facebook">
+    </div>
   </footer>
   <script src="scripts/index.js" type="module"></script>
 </body>

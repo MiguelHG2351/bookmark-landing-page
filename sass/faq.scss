@@ -1,0 +1,49 @@
+
+.faq {
+    margin: 2rem 0;
+    .dropdowns {
+        .dropdown {
+            .dropdown-title {
+                text-align: left;
+                list-style: none;
+                padding: 1rem;
+                border-bottom: 1px solid $grayish;
+                color: $veryDarkBlue;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-image: url(../images/icon-arrow.svg);
+                    width: 18px;
+                    height: 12px;
+                    right: 0;
+                    top: 50%;
+                    transform: translateX(-50%) rotate(0deg);
+                }
+            }
+
+            &[open] .dropdown-title::before {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            
+            .dropdown-content {
+                text-align: left;
+            }
+        }
+        margin: 2rem 0;
+    }
+
+    .btn-dropdown {
+        cursor: pointer;
+        text-transform: capitalize;
+        padding: 1.5rem;
+        font-size: 1rem;
+        border: none;
+        background-color: $softBlue;
+        border-radius: .5rem;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1.2px;
+    }
+}

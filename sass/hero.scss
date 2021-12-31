@@ -1,0 +1,84 @@
+
+
+.hero {
+    .hero-image {
+        & img {
+            width: 100%;
+        }
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+
+        .hero-description {
+            & h1 {
+                font-size: 2rem;
+                color: $veryDarkBlue;
+                text-transform: capitalize;
+                letter-spacing: 2px;
+            }
+
+            & p {
+                color: $grayish;
+            }
+        }
+        
+        .hero-action {
+            display: flex;
+            justify-content: center;
+            gap: 0 2rem;
+
+            .hero-action-chrome, .hero-action-firefox {
+                padding: 1rem;
+                border: none;
+                font-size: 1rem;
+                transition: transform .15s ease-in;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+
+            .hero-action-chrome:hover, .hero-action-firefox:hover {
+                transform: scale(.8);
+            }
+
+            .hero-action-chrome {
+                background-color: $softBlue;
+                color: #fff;
+            }
+            
+            .hero-action-firefox {
+                background-color: #f7f7f7;
+                color: $veryDarkBlue;
+                box-shadow: $shadow;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        .hero-image {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .hero-content {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            .hero-description {
+                text-align: left;
+            }
+
+            .hero-action {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
